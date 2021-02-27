@@ -1,5 +1,5 @@
-url: ""
-baseurl: ""
+url: "https://myxotod.github.io"
+baseurl: "/Vertical-Writing-Sandbox"
 title: "Vertical Writing Sandbox"
 permalink: /:title
 livereload: true
