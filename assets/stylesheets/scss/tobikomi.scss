@@ -1,99 +1,101 @@
-a {
-    text-decoration: none;
+.tobikomi {
+    a {
+        text-decoration: none;
+    }
+
+    #container {
+        font-family: 'Noto Serif JP', serif;
+        border: solid 1px #777;
+        margin: 0 auto;
+        margin-top: 5vh;
+        padding: 1em;
+        width: 80vw;
+        height: 50vh;
+        /* ↑ look into ↓ */
+        /* https://www.w3.org/TR/css3-mediaqueries/#orientation */
+        writing-mode: vertical-rl;
+        overflow: auto;
+    }
+
+    p {
+        text-orientation: mixed;
+        /* seems to automatically rotate half width characters.
+        maybe some unicode range selection magic can undo
+        that for digits? */
+    }
+
+    p, ul, ol, table {
+        margin-block-end: 1em;
+    }
+
+    /* - - - - - - - - - - - - - */
+    /* upright combined numbers  */
+
+    .combi {
+        /* text-combine-upright: digits 2; /* doesn't work */
+        text-combine-upright: all;
+    }
+
+    /* - - - - - - - - - - - - - */
+    /* upright acronyms          */
+
+    .upright {
+        text-orientation: upright;
+        text-transform: full-width;
+    }
+
+    /* - - - - - - - - - - - - - */
+    /* lists                     */
+
+    ol {
+        /* list-style-type: katakana-iroha; /* dictates 、 suffix */
+        /* margin-top: 2em; /* needed in case of default counter */
+        counter-reset: item;
+        list-style-type: none;
+    }
+
+    ol li:before {
+        content: counter(item, katakana-iroha) '）';
+        counter-increment: item;
+    }
+
+    ol li::marker {
+        /* text-combine-upright: all; /* doesn't work */
+    }
+
+    /* - - - - - - - - - - - - - */
+    /* tables                    */
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: solid 1px #777;
+        padding: 0.5em;
+    }
+
+    .bushu tr:first-child td {
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .bushu td:nth-child(1),
+    .bushu td:nth-child(3) {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .bushu td:nth-child(2),
+    .bushu td:nth-child(4) {
+        font-size: 0.7em;
+    }
+
+    .bushu td[colspan="4"] {
+        text-align: center;
+        font-size: 0.7em;
+    }
+
+    /* - - - - - - - - - - - - - */
+    /*                           */
 }
-
-#container {
-    font-family: 'Noto Serif JP', serif;
-    border: solid 1px #777;
-    margin: 0 auto;
-    margin-top: 5vh;
-    padding: 1em;
-    width: 80vw;
-    height: 50vh;
-    /* ↑ look into ↓ */
-    /* https://www.w3.org/TR/css3-mediaqueries/#orientation */
-    writing-mode: vertical-rl;
-    overflow: auto;
-}
-
-p {
-    text-orientation: mixed;
-    /* seems to automatically rotate half width characters.
-       maybe some unicode range selection magic can undo
-       that for digits? */
-}
-
-p, ul, ol, table {
-    margin-block-end: 1em;
-}
-
-/* - - - - - - - - - - - - - */
-/* upright combined numbers  */
-
-.combi {
-    /* text-combine-upright: digits 2; /* doesn't work */
-    text-combine-upright: all;
-}
-
-/* - - - - - - - - - - - - - */
-/* upright acronyms          */
-
-.upright {
-    text-orientation: upright;
-    text-transform: full-width;
-}
-
-/* - - - - - - - - - - - - - */
-/* lists                     */
-
-ol {
-    /* list-style-type: katakana-iroha; /* dictates 、 suffix */
-    /* margin-top: 2em; /* needed in case of default counter */
-    counter-reset: item;
-    list-style-type: none;
-}
-
-ol li:before {
-    content: counter(item, katakana-iroha) '）';
-    counter-increment: item;
-}
-
-ol li::marker {
-    /* text-combine-upright: all; /* doesn't work */
-}
-
-/* - - - - - - - - - - - - - */
-/* tables                    */
-
-table {
-    border-collapse: collapse;
-}
-
-td, th {
-    border: solid 1px #777;
-    padding: 0.5em;
-}
-
-.bushu tr:first-child td {
-    text-align: center;
-    font-size: 1.2em;
-}
-
-.bushu td:nth-child(1),
-.bushu td:nth-child(3) {
-    text-align: center;
-    font-size: 1.5em;
-}
-
-.bushu td:nth-child(2),
-.bushu td:nth-child(4) {
-    font-size: 0.7em;
-}
-
-.bushu td[colspan="4"] {
-    text-align: center;
-    font-size: 0.7em;
-}
-
-/* - - - - - - - - - - - - - */
-/*                           */
