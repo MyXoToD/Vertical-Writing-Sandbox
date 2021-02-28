@@ -1,0 +1,35 @@
+a {
+    text-decoration: none;
+}
+
+#container {
+    font-family: 'Noto Serif JP', serif;
+    border: solid 1px #777;
+    margin: 0 auto;
+    margin-top: 5vh;
+    padding: 1em;
+    width: 80vw;
+    height: 50vh;
+    /* ↑ look into ↓ */
+    /* https://www.w3.org/TR/css3-mediaqueries/#orientation */
+    writing-mode: vertical-rl;
+    overflow: auto;
+}
+
+p {
+    text-orientation: mixed;
+    /* seems to automatically rotate half width characters.
+       maybe some unicode range selection magic can undo
+       that for digits? */
+    margin-block-end: 1em;
+}
+
+.combi {
+    /* text-combine-upright: digits 2; /* doesn't work */
+    text-combine-upright: all;
+}
+
+.upright {
+    text-orientation: upright;
+    text-transform: full-width;
+}
