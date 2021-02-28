@@ -2,7 +2,7 @@
 title: Demo 1
 layout: demo
 stylesheet: demo1
-description: Mixed vertical and horizontal text blocks...
+description: Mixed vertical and horizontal text blocks. Contains a little test javascript to make horizontal scrolling possible by using the mouse wheel. Page scroll is converted to horizontal scroll while mouse is scrolling on vertical text block.
 ---
 
 <div class="content">
@@ -27,3 +27,20 @@ description: Mixed vertical and horizontal text blocks...
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum et doloremque officia amet eius? Distinctio neque quia tempora voluptatum vitae eos sit cum molestiae nesciunt, ad incidunt deleniti. Enim, dolores!</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia est saepe consequuntur libero, sint tempora expedita accusantium quae explicabo recusandae eligendi optio eum incidunt, accusamus, laborum illum quam sapiente ratione.</p>
 </div>
+
+<script>
+    const jps = document.querySelectorAll('.jp');
+    jps.forEach(jp => {
+        jp.addEventListener('mousewheel', e => {
+            // Convert vertical page scroll to horizontal jp box scroll
+            jp.scrollLeft -= e.deltaY;
+            let offsetWidth = jp.offsetWidth;
+            let scrollWidth = jp.scrollWidth;
+            let scrollPos = Math.abs(jp.scrollLeft);
+            if (scrollPos > 0 && scrollPos < scrollWidth - offsetWidth) {
+                // Stop page scroll while scrolling in jp box
+                e.preventDefault();
+            }
+        });
+    });
+</script>
