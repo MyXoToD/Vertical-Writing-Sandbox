@@ -9,10 +9,12 @@
             margin-bottom: 1em;
         }
         .jp {
+            position: relative;
             font-family: 'Noto Serif JP', sans-serif;
             writing-mode: vertical-rl;
             max-height: 50vh;
-            max-width: 100%;
+            width: calc(100% + 160px);
+            margin-left: -80px;
             overflow: auto;
             padding-bottom: 10px;
             scrollbar-color: #1abc9c transparent;
