@@ -6,7 +6,8 @@ We want to see what is possible with web typography and vertical text/writing. V
 
 - [Main Page](https://myxotod.github.io/Vertical-Writing-Sandbox/)
 - Local development: http://localhost:4000/Vertical-Writing-Sandbox/
-- More demo links coming soon...
+- [Demo 1](https://myxotod.github.io/Vertical-Writing-Sandbox/demo-1)
+- [砂場飛び込み](https://myxotod.github.io/Vertical-Writing-Sandbox/tobikomi)
 
 ### How to add demos
 
