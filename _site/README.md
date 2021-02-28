@@ -5,7 +5,7 @@ We want to see what is possible with web typography and vertical text/writing. V
 ### Demos / Testing
 
 - [Main Page](https://myxotod.github.io/Vertical-Writing-Sandbox/)
-- Local development: [localhost:4000/Vertical-Writing-Mode/]
+- Local development: http://localhost:4000/Vertical-Writing-Mode/
 - More demo links coming soon...
 
 ### How to add demos

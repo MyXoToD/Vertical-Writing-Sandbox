@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Happy Jekylling!"
+title: "Demo List"
 ---
 
 <h1>{{ site.title }}</h1>
@@ -9,6 +9,9 @@ title: "Happy Jekylling!"
     {% for post in site.posts %}
         <li>
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            {% if post.description %}
+                <br />{{ post.description }}
+            {% endif %}
         </li>
     {% endfor %}
 </ul>
