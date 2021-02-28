@@ -1,7 +1,4 @@
 .tobikomi {
-    a {
-        text-decoration: none;
-    }
 
     #container {
         font-family: 'Noto Serif JP', serif;
@@ -52,15 +49,16 @@
         /* margin-top: 2em; /* needed in case of default counter */
         counter-reset: item;
         list-style-type: none;
-    }
 
-    ol li:before {
-        content: counter(item, katakana-iroha) '）';
-        counter-increment: item;
-    }
+        li:before {
+         content: counter(item, katakana-iroha) '）';
+         counter-increment: item;
+        }
 
-    ol li::marker {
-        /* text-combine-upright: all; /* doesn't work */
+        li::marker {
+            /* text-combine-upright: all; /* doesn't work */
+        }
+
     }
 
     /* - - - - - - - - - - - - - */
@@ -75,25 +73,43 @@
         padding: 0.5em;
     }
 
-    .bushu tr:first-child td {
-        text-align: center;
-        font-size: 1.2em;
+    table.bushu {
+        tr:first-child td {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        td:nth-child(1), td:nth-child(3) {
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        td:nth-child(2), td:nth-child(4) {
+            font-size: 0.7em;
+        }
+
+        td[colspan="4"] {
+            text-align: center;
+            font-size: 0.7em;
+        }
     }
 
-    .bushu td:nth-child(1),
-    .bushu td:nth-child(3) {
-        text-align: center;
-        font-size: 1.5em;
+    /* - - - - - - - - - - - - - */
+    /* text stying               */
+
+    em {
+        font-style: normal;
+        text-emphasis-style: dot;
+        /* doesn't work on Chrome */
     }
 
-    .bushu td:nth-child(2),
-    .bushu td:nth-child(4) {
-        font-size: 0.7em;
+    u {
+        text-decoration: underline;
     }
 
-    .bushu td[colspan="4"] {
-        text-align: center;
-        font-size: 0.7em;
+    p {
+        text-underline-position: right;
+        /* underline on the left by default */
     }
 
     /* - - - - - - - - - - - - - */
